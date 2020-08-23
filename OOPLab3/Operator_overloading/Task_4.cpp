@@ -8,7 +8,7 @@ class Time {
 	int second;
 public:
 	Time();
-	Time(int h,int min,int sec);
+	Time(int h, int min, int sec);
 	void display();
 	Time operator+(Time obj);
 	Time operator--();
@@ -17,9 +17,9 @@ public:
 	Time operator++(int);
 };
 
-Time::Time(): hour(0),minute(0),second(0) {	}
+Time::Time() : hour(0), minute(0), second(0) {	}
 
-Time::Time(int h,int min,int sec):hour(h),minute(min),second(sec) {	}
+Time::Time(int h, int min, int sec) : hour(h), minute(min), second(sec) {	}
 
 Time Time::operator+(Time obj)
 {
@@ -52,7 +52,7 @@ void Time::display()
 Time Time::operator--()
 {
 	Time temp;
-	temp.second= --second;
+	temp.second = --second;
 	temp.minute = minute;
 	if (temp.second < 0)
 	{
@@ -84,7 +84,7 @@ Time Time::operator++()
 	temp.minute = minute;
 	if (temp.second > 60)
 	{
-		temp.second-= 60;
+		temp.second -= 60;
 		++temp.minute;
 	}
 	temp.hour = hour;
@@ -108,30 +108,30 @@ Time Time::operator++(int)
 int main()
 {
 	int h, m, s;
-	cout << "Enter first time\n";
+	cout << "***************************** Enter first time *****************************\n\n";
 	cout << "Enter the hours:\t";
 	cin >> h;
 	cout << "Enter the minutes:\t";
 	cin >> m;
 	cout << "Enter the seconds:\t";
 	cin >> s;
-	Time time1(h,m,s);
-	
-	cout << "Enter first time\n";
+	Time time1(h, m, s);
+
+	cout << "***************************** Enter second time *****************************\n\n";
 	cout << "Enter the hours:\t";
 	cin >> h;
 	cout << "Enter the minutes:\t";
 	cin >> m;
 	cout << "Enter the seconds:\t";
 	cin >> s;
-	Time time2(h,m,s);
+	Time time2(h, m, s);
 
 	Time emptyTime;
 	cout << "The sum of the both times:\t";
 	emptyTime = time1 + time2;
 	emptyTime.display();
 	cout << "\nThe result of pre increment and decrement operator\n";
-	emptyTime =	++emptyTime;
+	emptyTime = ++emptyTime;
 	cout << "Pre increment operator:\t";
 	emptyTime.display();
 	cout << "Pre decrement operator:\t";
